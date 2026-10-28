@@ -8,7 +8,7 @@ management.
 > **Application / store name:** Virestis
 > **Description:** A component-based React storefront where visitors can
 > browse a catalogue of plants and socks, search/filter/sort
-> the catalogue, manage a shopping basket, and save favorites — all backed
+> the catalogue, manage a shopping basket, and save favorites 
 > by a Redux store. No backend, database, or authentication is used; the
 > product catalogue is static data (`src/data/products.js`), as specified
 > by the lab brief.
@@ -27,14 +27,14 @@ management.
 
 ## Main React components
 
-- `Navbar` — brand, navigation links, live cart/favorites counts, dark-mode toggle, mobile menu.
-- `HeroSection` — landing banner on the home page.
-- `ProductCard` — catalogue tile with add-to-cart and favorite toggle (`props`-driven).
-- `ProductMark` — illustrated placeholder tile for a product (icon + accent color).
-- `SearchBar`, `CategoryFilter`, `SortSelect` — controlled filter inputs for the catalogue (local state lives in `HomePage`, passed down via props).
-- `QuantityStepper` — reusable +/- quantity control, used on both the product page and the cart.
-- `CartItemRow` — a single line item in the basket, dispatches Redux actions to update/remove itself.
-- `Footer`, `Badge`, `Button`, `Card` — small presentational building blocks.
+- `Navbar` : brand, navigation links, live cart/favorites counts, dark-mode toggle, mobile menu.
+- `HeroSection` : landing banner on the home page.
+- `ProductCard` : catalogue tile with add-to-cart and favorite toggle (`props`-driven).
+- `ProductMark` : illustrated placeholder tile for a product (icon + accent color).
+- `SearchBar`, `CategoryFilter`, `SortSelect` : controlled filter inputs for the catalogue (local state lives in `HomePage`, passed down via props).
+- `QuantityStepper` : reusable +/- quantity control, used on both the product page and the cart.
+- `CartItemRow` : a single line item in the basket, dispatches Redux actions to update/remove itself.
+- `Footer`, `Badge`, `Button`, `Card` : small presentational building blocks.
 
 ## Pages (routes)
 
@@ -52,12 +52,12 @@ The store (`src/redux/store.js`) combines three slices, each created with
 Redux Toolkit's `createSlice` (which generates the action creators and the
 reducer together):
 
-- **`cart`** (`cartSlice.js`) — array of `{ productId, quantity }`.
+- **`cart`** (`cartSlice.js`) : array of `{ productId, quantity }`.
   Actions: `addToCart`, `removeFromCart`, `incrementQuantity`,
   `decrementQuantity`, `setQuantity`, `clearCart`.
-- **`favorites`** (`favoritesSlice.js`) — array of favorited product ids.
+- **`favorites`** (`favoritesSlice.js`) : array of favorited product ids.
   Actions: `toggleFavorite`, `clearFavorites`.
-- **`theme`** (`themeSlice.js`) — `'light' | 'dark'`. Actions: `toggleTheme`, `setTheme`.
+- **`theme`** (`themeSlice.js`) : `'light' | 'dark'`. Actions: `toggleTheme`, `setTheme`.
 
 `src/redux/selectors.js` combines the normalized cart/favorites state with
 the static product catalogue (e.g. `selectCartDetails`, `selectCartCount`,
@@ -77,17 +77,17 @@ Required:
   updated via `useDispatch` from React components.
 
 Optional (implemented):
-- 🔍 Product search
-- 🏷️ Category filtering (Plants / Socks / Accessories)
-- 📄 Product detail pages
-- 🔢 Quantity management (stock-aware stepper, both on the product page and in the cart)
-- 💰 Cart subtotal + savings total
-- ❤️ Favorites (Redux-backed, with its own page)
-- ↕️ Product sorting (price / name)
-- 🌗 Dark / light mode (Redux-backed, persisted)
-- 🧭 Simple navigation (React Router)
-- 💾 LocalStorage persistence for cart, favorites, and theme
-- 🏷️ Discount display (strikethrough original price + "Sale" stamp on select items)
+-  Product search
+-  Category filtering (Plants / Socks / Accessories)
+-  Product detail pages
+-  Quantity management (stock-aware stepper, both on the product page and in the cart)
+-  Cart subtotal + savings total
+-  Favorites (Redux-backed, with its own page)
+-  Product sorting (price / name)
+-  Dark / light mode (Redux-backed, persisted)
+-  Simple navigation (React Router)
+-  LocalStorage persistence for cart, favorites, and theme
+-  Discount display (strikethrough original price + "Sale" stamp on select items)
 
 ## Instructions for running the application
 
@@ -105,7 +105,7 @@ npm run build
 npm run preview
 ```
 
-No environment variables, database, or backend setup is required — this
+No environment variables, database, or backend setup is required, this
 lab intentionally ships with a static in-memory/local-storage product and
 cart model. A backend, database, authentication, and payment system are
 expected in a later lab.
